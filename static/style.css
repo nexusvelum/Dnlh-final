@@ -1,0 +1,619 @@
+/* ==========================================================================
+   PALETA DE CORES FORNECIDA:
+   Dominante/Accent: #00266d (Azul Corporativo / Navy Blue)
+   Dark/Fundo Secundário: #222222 (Carvão Escuro / Off-Black)
+   Backgrounds Gerais: #ffffff (Branco Puro) e #fbfbfb (Cinza Muito Claro)
+   ========================================================================== */
+
+/* 1. CONFIGURAÇÕES GERAIS E RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: #222222;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 20px;
+}
+
+.alt-bg {
+    background-color: #fbfbfb;
+}
+
+/* Estrutura Principal e Animação de Saída (Fade-Out) */
+#main-site {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.fade-out {
+    opacity: 0 !important;
+    transform: scale(0.95) !important;
+}
+
+
+/* 2. COMPONENTES REUTILIZÁVEIS
+   ========================================================================== */
+/* Títulos de Secção */
+.section-title {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: #222222;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: #00266d;
+}
+
+.section-subtitle {
+    color: #666666;
+    margin-top: 10px;
+}
+
+.tag {
+    font-size: 0.8rem;
+    background-color: #00266d;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Listas de Serviços Padrão */
+.service-list {
+    list-style: none;
+}
+
+.service-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.5;
+    color: #444444;
+    font-size: 0.95rem;
+}
+
+.service-list li i {
+    color: #00266d;
+    margin-right: 10px;
+    margin-top: 3px;
+    font-size: 0.9rem;
+}
+
+
+/* 3. TELA DE BOAS-VINDAS (SPLASH SCREEN)
+   ========================================================================== */
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.welcome-content {
+    max-width: 600px;
+}
+
+.logo-placeholder {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.welcome-logo {
+    max-width: 170px;
+    height: auto;      
+    display: block;
+    margin: 0 auto;
+}
+
+#welcome-screen h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 6px;
+    color: #00266d;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background-color: #00266d;
+    margin: 0 auto 25px auto;
+}
+
+.fade-in-text {
+    font-size: 1.1rem;
+    color: #222222;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+#enter-btn {
+    background-color: #00266d;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#enter-btn:hover {
+    background-color: #001a4d;
+    transform: translateY(-2px);
+}
+
+
+/* 4. HEADER & NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contentores da Logo no Header */
+.logo-place {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.logo-h2 {
+    max-width: 80px;
+    height: auto;      
+    display: block;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #222222;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #00266d;
+}
+
+/* Links do Menu */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #222222;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00266d;
+}
+
+/* Menu Mobile Toggle */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #222222;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* 5. SECÇÕES ESPECÍFICAS DO PORTFÓLIO
+   ========================================================================== */
+
+/* Página 2: Quem Somos Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #444444;
+}
+
+.about-accent .accent-box {
+    background-color: #00266d;
+    color: white;
+    padding: 40px;
+    border-left: 10px solid #222222;
+    border-radius: 4px;
+}
+
+.accent-box h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Página 3: Missão e Visão */
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.mv-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid #00266d;
+}
+
+.mv-icon {
+    font-size: 2.5rem;
+    color: #00266d;
+    margin-bottom: 20px;
+}
+
+.mv-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #222222;
+    letter-spacing: 1px;
+}
+
+.mv-card p {
+    line-height: 1.7;
+    color: #555555;
+}
+
+/* Páginas 4 & 5: Valores */
+.valores-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.valor-item {
+    padding: 20px;
+    position: relative;
+}
+
+.valor-num {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(0, 38, 109, 0.1);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.valor-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222222;
+    position: relative;
+    z-index: 2;
+}
+
+.valor-item p {
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Página 6: Serviços */
+.services-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-block {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.service-header i {
+    font-size: 1.8rem;
+    color: #00266d;
+    margin-right: 15px;
+}
+
+.service-header h3 {
+    font-size: 1.15rem;
+    color: #222222;
+}
+
+/* Página 7: Eletromecânica */
+.service-list-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    list-style: none;
+}
+
+.service-list-grid li {
+    display: flex;
+    background: #fbfbfb;
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 4px solid #00266d;
+}
+
+.service-list-grid li i {
+    font-size: 2rem;
+    color: #00266d;
+    margin-right: 20px;
+}
+
+.service-list-grid h5 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #222222;
+}
+
+.service-list-grid p {
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.5;
+}
+
+/* Página 8: Clientes */
+.clients-gallery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.client-logo-box {
+    background-color: #ffffff;
+    padding: 30px 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.client-icon {
+    font-size: 2.5rem;
+    color: #cccccc;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.client-logo-box span {
+    font-weight: bold;
+    color: #555555;
+}
+
+/* Página 9: Redirecionamento de Contactos */
+.contact-channels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.channel-card {
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-bottom: 4px solid #ccc;
+}
+
+.channel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.channel-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.channel-card h4 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.channel-card p {
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+/* Cores específicas das marcas das redes */
+.whatsapp { border-bottom-color: #25D366; }
+.whatsapp .channel-icon { color: #25D366; }
+
+.instagram { border-bottom-color: #E1306C; }
+.instagram .channel-icon { color: #E1306C; }
+
+.linkedin { border-bottom-color: #0077B5; }
+.linkedin .channel-icon { color: #0077B5; }
+
+.email { border-bottom-color: #00266d; }
+.email .channel-icon { color: #00266d; }
+
+
+/* 6. FOOTER
+   ========================================================================== */
+footer {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================================================
+   7. MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================================================== */
+
+/* Comprimindo Grids para Tablets e Ecrãs Médios */
+@media (max-width: 992px) {
+    .services-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .contact-channels {
+        grid-template-columns: 1fr 1fr;
+    }
+    .valores-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ajustes para Dispositivos Móveis (Telemóveis) */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-list-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-channels {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Configuração do Menu Hamburguer Mobile */
+    nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        background-color: #ffffff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    nav.active {
+        display: block;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Alternância e transformação mecânica do ícone Hamburguer */
+    .menu-toggle.active .bar:nth-child(2) { 
+        opacity: 0; 
+    }
+    .menu-toggle.active .bar:nth-child(1) { 
+        transform: translateY(8px) rotate(45deg); 
+    }
+    .menu-toggle.active .bar:nth-child(3) { 
+        transform: translateY(-8px) rotate(-45deg); 
+    }
+}

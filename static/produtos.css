@@ -1,0 +1,369 @@
+/* ==========================================================================
+   DNLH Energy Angola - CSS Otimizado para Catálogo de Produtos Dinâmico
+   Paleta de Cores: Dominante (#00266d), Texto (#222222), Accent Novo (#25D366)
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: #222222;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 50px 20px;
+}
+
+/* Header & Barra de Navegação */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-place img {
+    max-height: 55px;
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #444444;
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: color 0.25s, transform 0.25s;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    color: #00266d;
+    transform: translateY(-1px);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #00266d;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.products-hero {
+    background: linear-gradient(135deg, #00266d 0%, #001845 100%);
+    color: #ffffff;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.products-hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.products-hero p {
+    font-size: 1.05rem;
+    color: #d0dbf0;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Categorias de Produtos */
+.category-section {
+    margin-bottom: 55px;
+    padding-top: 20px;
+}
+
+.category-title {
+    font-size: 1.45rem;
+    color: #00266d;
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #00266d;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Grelha de Produtos Otimizada */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* Card de Produto com Efeito Glassmorphism e Sombra Suave */
+.product-card {
+    background: #ffffff;
+    border: 1px solid #eef1f6;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.015);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.product-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,38,109,0.1);
+}
+
+.product-img-box {
+    width: 100%;
+    height: 190px;
+    background-color: #f7f9fc;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.06);
+}
+
+.product-info {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-sku {
+    font-size: 0.72rem;
+    color: #8c9ba5;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.product-info h3 {
+    font-size: 0.98rem;
+    color: #222222;
+    margin-bottom: 16px;
+    line-height: 1.4;
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+/* Botão Único Comprar - WhatsApp Integrado */
+.buy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.15);
+}
+
+.buy-btn:hover {
+    background-color: #20ba59;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(37, 211, 102, 0.25);
+}
+
+.buy-btn:active {
+    transform: translateY(0);
+}
+
+/* Redes Sociais e Rodapé Completos */
+.social-footer-section {
+    background-color: #f8fafc;
+    border-top: 1px solid #edf2f7;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 1.7rem;
+    color: #222222;
+}
+
+.section-subtitle {
+    color: #64748b;
+    margin-top: 6px;
+    font-size: 0.95rem;
+}
+
+.contact-channels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.channel-card {
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    padding: 24px 16px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid #cbd5e1;
+}
+
+.channel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.channel-icon {
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+}
+
+.channel-card h4 {
+    margin-bottom: 4px;
+    font-size: 1.05rem;
+}
+
+.channel-card p {
+    font-size: 0.82rem;
+    color: #64748b;
+}
+
+.whatsapp { border-bottom-color: #25D366; }
+.whatsapp .channel-icon { color: #25D366; }
+
+.instagram { border-bottom-color: #E1306C; }
+.instagram .channel-icon { color: #E1306C; }
+
+.linkedin { border-bottom-color: #0077B5; }
+.linkedin .channel-icon { color: #0077B5; }
+
+.email { border-bottom-color: #00266d; }
+.email .channel-icon { color: #00266d; }
+
+/* Footer Final */
+footer {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid #334155;
+}
+
+.footer-content p {
+    margin-bottom: 6px;
+    color: #94a3b8;
+}
+
+/* Responsividade Avançada */
+@media (max-width: 1024px) {
+    .contact-channels {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 10px 15px;
+    }
+    nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        background-color: #ffffff;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+    nav.active {
+        display: block;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+    nav ul li a {
+        display: block;
+        padding: 14px 20px;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.95rem;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    
+    .contact-channels {
+        grid-template-columns: 1fr;
+    }
+    .products-hero h1 {
+        font-size: 1.8rem;
+    }
+    .products-hero p {
+        font-size: 0.95rem;
+    }
+}
