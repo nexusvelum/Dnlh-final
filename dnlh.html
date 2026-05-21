@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dnlh - Energy Angola</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- FontAwesome for professional modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Tela de Boas-Vindas (Splash Screen / Hero Intro) -->
+    <div id="welcome-screen">
+        <div class="welcome-content">
+            <div class="logo-placeholder">
+                <img src="Img/logo.png" alt="Logo DNLH" class="welcome-logo">
+            </div>
+            <h2>DNLH ENERGY ANGOLA, LDA</h2>
+            <p class="subtitle">PORTFÓLIO</p>
+            <div class="divider"></div>
+            <p class="fade-in-text">Acompanhe nosso portfólio para saber mais sobre o nosso trabalho!</p>
+            <button id="enter-btn" onclick="startWebsite()">Explorar Portfólio <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapped (Initially Hidden or Smooth Reveal) -->
+    <div id="main-site" class="hidden">
+        
+        <!-- Header / Navigation -->
+        <header>
+            <div class="nav-container">
+                <div class="logo-place">
+                    <img src="Img/logo.png" alt="Logo DNLH" class="logo-h2">
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#quem-somos">Quem Somos</a></li>
+                        <li><a href="#missao-visao">Missão & Visão</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="/produtos" id="produtos-link">Produtos</a></li>
+                        <li><a href="#clientes">Clientes</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Página 2: Quem Somos -->
+        <section id="quem-somos" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Quem Somos?</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Somos uma empresa de direito Angolano, vocacionada na prestação de serviços de eletricidade, eletrónica e automação, consultoria informática e telecomunicações.</p>
+                        <p>É constituída por uma equipa jovem e dinâmica com vasta experiência no ramo tecnológico industrial, pronta para responder aos desafios mais exigentes do mercado.</p>
+                    </div>
+                    <div class="about-accent">
+                        <div class="accent-box">
+                            <h3>DNLH</h3>
+                            <p>Tecnologia & Engenharia Industrial no Mercado Angolano</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página 3: Missão e Visão -->
+        <section id="missao-visao" class="section-padding alt-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Diretrizes Estratégicas</h2>
+                </div>
+                <div class="mv-grid">
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>MISSÃO</h3>
+                        <p>Apresentar novos produtos, serviços e soluções que dinamizem e otimizem os processos de nossos clientes, gerando ganhos e produtividade, tendo como princípio básico a eficiência, o potencial e a criatividade humana dos nossos colaboradores.</p>
+                    </div>
+                    <div class="mv-card">
+                        <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                        <h3>VISÃO</h3>
+                        <p>Conhecer melhor o mercado Angolano, tendo como foco as necessidades dos nossos parceiros comerciais e a sociedade em geral. Ter um lugar de destaque entre as empresas do sector industrial, primando sempre pela qualidade e a inovação dos serviços.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Páginas 4 e 5: Valores e Compromisso (Garantindo fluidez da numeração do portfolio) -->
+        <section id="valores" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nossos Valores & Compromisso</h2>
+                </div>
+                <div class="valores-container">
+                    <div class="valor-item">
+                        <span class="valor-num">01</span>
+                        <h4>Eficiência</h4>
+                        <p>Otimização máxima de recursos e tempo para entregar resultados de excelência industrial.</p>
+                    </div>
+                    <div class="valor-item">
+                        <span class="valor-num">02</span>
+                        <h4>Criatividade Humana</h4>
+                        <p>Valorizamos o potencial inovador e intelectual da nossa equipa jovem e dinâmica.</p>
+                    </div>
+                    <div class="valor-item">
+                        <span class="valor-num">03</span>
+                        <h4>Qualidade e Inovação</h4>
+                        <p>Soluções modernas alinhadas com as tendências globais do setor tecnológico industrial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página 6: Serviços I -->
+        <section id="servicos" class="section-padding alt-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Engenharia, Tecnologia & Instrumentação</h2>
+                </div>
+                
+                <div class="services-wrapper">
+                    <!-- Consultoria -->
+                    <div class="service-block">
+                        <div class="service-header">
+                            <i class="fas fa-drafting-compass"></i>
+                            <h3>Consultoria em Projetos de Engenharia</h3>
+                        </div>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check-circle"></i> Projetos de automação, eletricidade e instrumentação industrial</li>
+                            <li><i class="fas fa-check-circle"></i> Projetos informáticos e tecnológicos</li>
+                            <li><i class="fas fa-check-circle"></i> Projetos de sistemas HVAC</li>
+                            <li><i class="fas fa-check-circle"></i> Comissionamento</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tecnologia da Informação -->
+                    <div class="service-block">
+                        <div class="service-header">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Tecnologia de Engenharia Informática</h3>
+                        </div>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check-circle"></i> Gestão de bases de dados</li>
+                            <li><i class="fas fa-check-circle"></i> Projetos de redes de internet UTP, fibra óptica e VSAT</li>
+                            <li><i class="fas fa-check-circle"></i> Venda de software de gestão empresarial (instalação e manutenção)</li>
+                            <li><i class="fas fa-check-circle"></i> Instalação e reparação de computadores e impressoras</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instrumentação -->
+                    <div class="service-block">
+                        <div class="service-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>Instrumentação Industrial</h3>
+                        </div>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check-circle"></i> Instalação de controlo de acesso</li>
+                            <li><i class="fas fa-check-circle"></i> Calibração de instrumentos</li>
+                            <li><i class="fas fa-check-circle"></i> Instalação de equipamentos industriais</li>
+                            <li><i class="fas fa-check-circle"></i> Supervisão de sistemas de controlo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página 7: Serviços II - Eletricidade e Eletromecânica -->
+        <section id="eletromecanica" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Eletricidade & Eletromecânica</h2>
+                </div>
+                <div class="eletro-content">
+                    <div class="eletro-card">
+                        <div class="eletro-icon-big"><i class="fas fa-bolt"></i></div>
+                        <ul class="service-list-grid">
+                            <li>
+                                <i class="fas fa-charging-station"></i>
+                                <div>
+                                    <h5>Rebobinagem e Reparação</h5>
+                                    <p>Manutenção completa de motores elétricos de alta e baixa potência.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-project-diagram"></i>
+                                <div>
+                                    <h5>Esquemas Elétricos</h5>
+                                    <p>Elaboração, execução, correção e desenvolvimento de esquemas avançados.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-water"></i>
+                                <div>
+                                    <h5>Bombas Hidráulicas</h5>
+                                    <p>Montagem e condicionamento sob medida para exigências industriais.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-cogs"></i>
+                                <div>
+                                    <h5>Máquinas Industriais</h5>
+                                    <p>Diagnóstico e condicionamento preciso de sistemas de Controlo e Potência.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página 8: Clientes -->
+        <section id="clientes" class="section-padding alt-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nossos Atuais Clientes</h2>
+                </div>
+                <div class="clients-gallery">
+                    <div class="client-logo-box">
+                        <i class="fas fa-industry client-icon"></i>
+                        <span>Bio.com</span>
+                    </div>
+                    <div class="client-logo-box">
+                        <i class="fas fa-building client-icon"></i>
+                        <span>Parceiros Industriais</span>
+                    </div>
+                    <div class="client-logo-box">
+                        <i class="fas fa-network-wired client-icon"></i>
+                        <span>Setor Tecnológico</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página 9: Contactos e Redes Sociais com Redirecionamento Inteligente -->
+        <section id="contacto" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Entre em Contacto Connosco</h2>
+                    <p class="section-subtitle">Escolha o seu canal de comunicação preferido para falar com a DNLH</p>
+                </div>
+
+                <div class="contact-channels">
+                    <!-- Redirecionamentos solicitados onde tem email / contactos -->
+                    <a href="https://wa.me/244947761849" target="_blank" class="channel-card whatsapp">
+                        <div class="channel-icon"><i class="fab fa-whatsapp"></i></div>
+                        <h4>WhatsApp</h4>
+                        <p>Fale diretamente connosco</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/" target="_blank" class="channel-card instagram">
+                        <div class="channel-icon"><i class="fab fa-instagram"></i></div>
+                        <h4>Instagram</h4>
+                        <p>Siga o nosso trabalho diário</p>
+                    </a>
+
+                    <a href="https://www.linkedin.com/" target="_blank" class="channel-card linkedin">
+                        <div class="channel-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <h4>LinkedIn</h4>
+                        <p>Conexão corporativa profissional</p>
+                    </a>
+
+                    <a href="mailto:contacto@dnlh-energy.com" class="channel-card email">
+                        <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+                        <h4>E-mail Oficial</h4>
+                        <p>contacto@dnlh-energy.com</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container footer-content">
+                <p>&copy; 2026 DNLH Energy Angola, LDA. Todos os direitos reservados.</p>
+                <p>Eficiência, Potencial e Criatividade Humana.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
