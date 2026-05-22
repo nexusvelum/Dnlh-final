@@ -358,9 +358,9 @@ nav ul li a:hover {
 .valor-num {
     font-size: 3rem;
     font-weight: 800;
-    color: rgba(0, 38, 109, 0.1);
+    color: rgba(0, 39, 110, 0.2);
     position: absolute;
-    top: -10px;
+    top: -8px;
     left: 10px;
     z-index: 1;
 }
@@ -457,7 +457,7 @@ nav ul li a:hover {
 .client-logo-box {
     background-color: #ffffff;
     padding: 30px 5px;
-    border: 1px solid #e0e0e0;
+    
     border-radius: 4px;
     width: 220px;
     text-align: center;
